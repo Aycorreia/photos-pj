@@ -49,13 +49,13 @@ class PhotosControllerTest extends TestCase
        //1 prepare ->Seed database with
        //models
        Photos::create([
-           'name' => 'Gatitos'
+           'name' => 'test'
        ]);
        Photos::create([
-           'name' => 'Perritos'
+           'name' => 'Yu yu hakusho'
        ]);
        Photos::create([
-           'name' => 'Hardcore Programing Moo'
+           'name' => 'Hunter x hunter'
        ]);
        $response = $this->json('GET','/api/v1/photos');
 
@@ -70,9 +70,9 @@ class PhotosControllerTest extends TestCase
 //        $this->assertTrue(is_array($photosJSON,"[]"));
        $this->assertCount(3,$photos);
 
-       $this->assertEquals($photos[0]->name,'Gatitos');
-       $this->assertEquals($photos[1]->name,'Perritos');
-       $this->assertEquals($photos[2]->name,'Hardcore Programing Moo');
+       $this->assertEquals($photos[0]->name,'test');
+       $this->assertEquals($photos[1]->name,'Yu yu hakusho');
+       $this->assertEquals($photos[2]->name,'Hunter x hunter');
 
 
    }
